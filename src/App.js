@@ -97,9 +97,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-  
-        { /* Add Image Here */ }
-        <img src={boopsImage} alt="Example" style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
+
+        <img src={boopsImage} alt="BoopsToken" style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   
         {window.ethereum?.isMetaMask && wallet.accounts.length < 1 &&
           <ConnectButton onClick={handleConnect}>Connect</ConnectButton>
