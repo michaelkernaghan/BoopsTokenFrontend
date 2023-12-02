@@ -30,7 +30,8 @@ function App() {
   const [wallet, setWallet] = useState({ accounts: [] });
   const [boopsBalance, setBoopsBalance] = useState('0');
 
-  const connectContract = async () => {
+const connectContract = useCallback(async () => {
+  if (typeof window.ethereum !== 'undefined') {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const contract = new ethers.Contract("0x77032D64af56cF019714590030aB8193A6bCaa0c", BOOPSToken.abi, signer);
@@ -38,14 +39,18 @@ function App() {
 
     const symbol = await contract.symbol();
     const totalSupply = await contract.totalSupply();
-    const formattedTotalSupply = ethers.formatUnits(totalSupply, 'ether');
+    const formattedTotalSupply = ethers.utils.formatUnits(totalSupply, 'ether');
     setTokenDetails({ symbol, totalSupply: formattedTotalSupply });
-  };
+  } else {
+    console.error('Please install MetaMask!');
+  }
+}, []); // The empty array ensures that the function is only created once
+
 
   const fetchBoopsBalance = useCallback(async (account) => {
     try {
       const balance = await contract.balanceOf(account);
-      const formattedBalance = ethers.formatUnits(balance, 'ether');
+      const formattedBalance = ethers.utils.formatUnits(balance, 'ether');
       setBoopsBalance(formattedBalance);
     } catch (error) {
       console.error("Error fetching balance:", error);
@@ -81,7 +86,7 @@ function App() {
         setWallet({ accounts: [] });
       });
     };
-  }, [fetchBoopsBalance]);
+  }, [connectContract, fetchBoopsBalance]);
 
   const handleConnect = async () => {
     let accounts = await window.ethereum.request({
@@ -101,7 +106,7 @@ function App() {
             <TokenDetailsList>
               <li>Symbol: {tokenDetails && JSON.stringify(tokenDetails.symbol)}</li>
               <li>Total Supply: {tokenDetails && tokenDetails.totalSupply}</li>
-              <li>BOOPS Balance: {boopsBalance}</li>
+              <li>Your BOOPS Balance: {boopsBalance}</li>
             </TokenDetailsList>
           </div>
         }
