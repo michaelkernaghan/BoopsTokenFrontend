@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #044377;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -48,4 +48,13 @@ TokenDetailsList li {
 
 .ConnectButton:hover {
   background-color: #35c0f6;
+}
+
+.App-title {
+  color: #fdfdfc; /* Dark text color for better contrast */
+  font-size: 8rem; /* 3rem is quite large; adjust as needed */
+  text-align: center; /* Center the title */
+  margin-top: 2rem; /* Space above the title */
+  font-family: 'Roboto', 'Arial', sans-serif;
+  text-shadow: 2px 2px 4px #aaa; /* Optional shadow for a "raised" effect */
 }

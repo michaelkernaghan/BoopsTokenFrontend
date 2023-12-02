@@ -99,12 +99,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1 className="App-title">Cats give BOOPS</h1>
         {window.ethereum?.isMetaMask && wallet.accounts.length < 1 && (
           <ConnectButton onClick={handleConnect}>Connect</ConnectButton>
         )}
         {wallet.accounts.length > 0 && (
           <div className="Token-info">
-          <img src="./boopsImage.png" className="Featured-image" alt="cats give boops" />  
+            <img src="./boopsImage.png" className="Featured-image" alt="cats give boops" />
             Click on the screen to refresh
             <TokenDetailsList>
               <li>Symbol: {tokenDetails && JSON.stringify(tokenDetails.symbol)}</li>
@@ -117,6 +118,7 @@ function App() {
       </header>
     </div>
   );
+  
 };
 
 export default App;
