@@ -104,20 +104,13 @@ function App() {
         )}
         {wallet.accounts.length > 0 && (
           <div className="Token-info">
-            <img
-              src="boopsImage.png" // Replace with your image URL
-              alt="Cats give BOOPS"
-              className="Featured-image"
-            />
-              <p></p>
-            Please refresh the screen to see the details
-           <p></p>
+          <img src="./boopsImage.png" className="Featured-image" alt="cats give boops" />  
+            Click on the screen to refresh
             <TokenDetailsList>
               <li>Symbol: {tokenDetails && JSON.stringify(tokenDetails.symbol)}</li>
               <li>Total Supply: {tokenDetails && tokenDetails.totalSupply}</li>
               <li>Your BOOPS Balance: {boopsBalance}</li>
             </TokenDetailsList>
-            <p></p>
             To disconnect, stop the Active Connection in Metamask
           </div>
         )}
