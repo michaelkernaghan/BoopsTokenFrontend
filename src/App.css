@@ -54,7 +54,7 @@ TokenDetailsList li {
   color: #fdfdfc; /* Dark text color for better contrast */
   font-size: 8rem; /* 3rem is quite large; adjust as needed */
   text-align: center; /* Center the title */
-  margin-top: 2rem; /* Space above the title */
+  margin-top: 1rem; /* Space above the title */
   font-family: 'Roboto', 'Arial', sans-serif;
   text-shadow: 2px 2px 4px #aaa; /* Optional shadow for a "raised" effect */
 }
@@ -67,5 +67,25 @@ TokenDetailsList li {
   background-color: #282c34;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
+}
+
+a {
+  background-color: red;
+  color: white;
+  padding: .25em .5em; 
+  text-decoration: none;
+  /* text-transform: uppercase; */
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a:active {
+  background-color: black;
+}
+
+a:visited {
+  background-color: #ccc;
 }

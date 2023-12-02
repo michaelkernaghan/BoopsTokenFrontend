@@ -105,6 +105,7 @@ function App() {
         )}
         {wallet.accounts.length > 0 && (
           <div className="Token-info">
+            <br />
             <img src="./boopsImage.png" className="Featured-image" alt="cats give boops" />
             <TokenDetailsList>
               <li>Symbol: {tokenDetails && JSON.stringify(tokenDetails.symbol)}</li>
@@ -117,12 +118,11 @@ function App() {
       </header>
       <br></br>
       <footer className="App-footer">
-      Created with OpenAI. (2023). ChatGPT [Large language model]. 
-      <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer">chat.openai.com</a>
-    </footer>
+      <a href="https://boopsfaucet.netlify.app/" target="_blank" rel="noopener noreferrer">BOOPS Faucet</a>
+      </footer>
     </div>
   );
-  
+
 };
 
 export default App;
