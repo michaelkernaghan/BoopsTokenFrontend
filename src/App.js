@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import detectEthereumProvider from '@metamask/detect-provider'
 import { ethers, Contract, BigNumber } from "ethers";
 import BOOPSToken from './abi/BOOPSToken.json'
-import boopsImage from './assets/boopsImage.png';
 
 const ConnectButton = styled.button`
   color: lightgray;
@@ -98,8 +97,6 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        <img src={boopsImage} alt="BoopsToken" style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
-  
         {window.ethereum?.isMetaMask && wallet.accounts.length < 1 &&
           <ConnectButton onClick={handleConnect}>Connect</ConnectButton>
         }
