@@ -70,3 +70,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/76022558-e6bb-407e-a273-c409631d064c/deploy-status)](https://app.netlify.com/sites/boopstokenstatus/deploys)
+
+
+### Acknowledgement
+Created using
+OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com

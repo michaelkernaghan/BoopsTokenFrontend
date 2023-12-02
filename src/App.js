@@ -106,7 +106,6 @@ function App() {
         {wallet.accounts.length > 0 && (
           <div className="Token-info">
             <img src="./boopsImage.png" className="Featured-image" alt="cats give boops" />
-            Click on the screen to refresh
             <TokenDetailsList>
               <li>Symbol: {tokenDetails && JSON.stringify(tokenDetails.symbol)}</li>
               <li>Total Supply: {tokenDetails && tokenDetails.totalSupply}</li>
@@ -116,6 +115,11 @@ function App() {
           </div>
         )}
       </header>
+      <br></br>
+      <footer className="App-footer">
+      Created with OpenAI. (2023). ChatGPT [Large language model]. 
+      <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer">chat.openai.com</a>
+    </footer>
     </div>
   );
   
