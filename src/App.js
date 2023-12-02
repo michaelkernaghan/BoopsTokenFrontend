@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import detectEthereumProvider from '@metamask/detect-provider';
 import BOOPSToken from './abi/BOOPSToken.json';
+import './App.css'; // Import your CSS file here
 
 const ethers = require("ethers");
 
@@ -30,21 +31,21 @@ function App() {
   const [wallet, setWallet] = useState({ accounts: [] });
   const [boopsBalance, setBoopsBalance] = useState('0');
 
-const connectContract = useCallback(async () => {
-  if (typeof window.ethereum !== 'undefined') {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const contract = new ethers.Contract("0x77032D64af56cF019714590030aB8193A6bCaa0c", BOOPSToken.abi, signer);
-    setContract(contract);
+  const connectContract = useCallback(async () => {
+    if (typeof window.ethereum !== 'undefined') {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contract = new ethers.Contract("0x77032D64af56cF019714590030aB8193A6bCaa0c", BOOPSToken.abi, signer);
+      setContract(contract);
 
-    const symbol = await contract.symbol();
-    const totalSupply = await contract.totalSupply();
-    const formattedTotalSupply = ethers.utils.formatUnits(totalSupply, 'ether');
-    setTokenDetails({ symbol, totalSupply: formattedTotalSupply });
-  } else {
-    console.error('Please install MetaMask!');
-  }
-}, []); // The empty array ensures that the function is only created once
+      const symbol = await contract.symbol();
+      const totalSupply = await contract.totalSupply();
+      const formattedTotalSupply = ethers.utils.formatUnits(totalSupply, 'ether');
+      setTokenDetails({ symbol, totalSupply: formattedTotalSupply });
+    } else {
+      console.error('Please install MetaMask!');
+    }
+  }, []); // The empty array ensures that the function is only created once
 
 
   const fetchBoopsBalance = useCallback(async (account) => {
@@ -98,21 +99,34 @@ const connectContract = useCallback(async () => {
   return (
     <div className="App">
       <header className="App-header">
-        {window.ethereum?.isMetaMask && wallet.accounts.length < 1 &&
+        {window.ethereum?.isMetaMask && wallet.accounts.length < 1 && (
           <ConnectButton onClick={handleConnect}>Connect</ConnectButton>
-        }
-        {wallet.accounts.length > 0 &&
-          <div>
+        )}
+        {wallet.accounts.length > 0 && (
+          <div className="Token-info">
+            <img
+              src="boopsImage.png" // Replace with your image URL
+              alt="Cats give BOOPS"
+              className="Featured-image"
+            />
+              <p></p>
+            Please refresh the screen to see the details
+           <p></p>
             <TokenDetailsList>
               <li>Symbol: {tokenDetails && JSON.stringify(tokenDetails.symbol)}</li>
               <li>Total Supply: {tokenDetails && tokenDetails.totalSupply}</li>
               <li>Your BOOPS Balance: {boopsBalance}</li>
             </TokenDetailsList>
+            <p></p>
+            To disconnect, stop the Active Connection in Metamask
           </div>
-        }
+        )}
       </header>
     </div>
   );
-}
+};
 
 export default App;
+
+
+

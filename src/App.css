@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,15 +13,39 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Token-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Featured-image {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+}
+
+TokenDetailsList {
+  list-style: none;
+  padding: 0;
+}
+
+TokenDetailsList li {
+  margin: 10px 0;
+}
+
+.ConnectButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.ConnectButton:hover {
+  background-color: #35c0f6;
 }
