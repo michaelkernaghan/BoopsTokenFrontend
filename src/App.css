@@ -21,7 +21,7 @@
 }
 
 .Featured-image {
-  width: 40%; 
+  width: 30%; 
   height: auto;
   border-radius: 5px;
 }
@@ -52,7 +52,7 @@ TokenDetailsList li {
 
 .App-title {
   color: #fdfdfc; /* Dark text color for better contrast */
-  font-size: 6rem; /* 3rem is quite large; adjust as needed */
+  font-size: 4rem; /* 3rem is quite large; adjust as needed */
   text-align: center; /* Center the title */
   margin-top: 1rem; /* Space above the title */
   font-family: 'Roboto', 'Arial', sans-serif;
@@ -75,7 +75,6 @@ a {
   color: white;
   padding: .25em .5em; 
   text-decoration: none;
-  /* text-transform: uppercase; */
 }
 
 a:hover {
