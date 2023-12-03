@@ -21,9 +21,9 @@
 }
 
 .Featured-image {
-  width: 50%; 
+  width: 40%; 
   height: auto;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 TokenDetailsList {
@@ -52,7 +52,7 @@ TokenDetailsList li {
 
 .App-title {
   color: #fdfdfc; /* Dark text color for better contrast */
-  font-size: 8rem; /* 3rem is quite large; adjust as needed */
+  font-size: 6rem; /* 3rem is quite large; adjust as needed */
   text-align: center; /* Center the title */
   margin-top: 1rem; /* Space above the title */
   font-family: 'Roboto', 'Arial', sans-serif;
