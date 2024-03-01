@@ -35,7 +35,7 @@ function App() {
     if (typeof window.ethereum !== 'undefined') {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
-      const contract = new ethers.Contract("0x77032D64af56cF019714590030aB8193A6bCaa0c", BOOPSToken.abi, signer);
+      const contract = new ethers.Contract("0xCB2aB1E44daDC889a91184527beC6820Bc2BF210", BOOPSToken.abi, signer);
       setContract(contract);
 
       const symbol = await contract.symbol();
