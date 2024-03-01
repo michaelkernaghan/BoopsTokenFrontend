@@ -1,6 +1,6 @@
 {
     "_format": "hh-sol-artifact-1",
-    "contractName": "TORQUEToken",
+    "contractName": "BOOPSToken",
     "sourceName": "contracts/token.sol",
     "abi": [
       {
