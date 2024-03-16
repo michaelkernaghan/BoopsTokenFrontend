@@ -1,5 +1,3 @@
-Creating a README for the `BoopsTokenFrontend` repository involves detailing the purpose of the project, setup instructions, features, technology stack, and any other relevant information for contributors and users. Here's a draft for your project:
-
 ```markdown
 # BoopsTokenFrontend
 
