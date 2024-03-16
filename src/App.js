@@ -26,15 +26,15 @@ const TokenDetailsList = styled.ul`
 `
 
 const ContractAddressLink = styled.a`
-  color: #FFD580; /* Use your theme's color */
+  color: #CBA135; /* A more subdued gold color */
   &:hover {
-    color: #FFC300; /* Slightly brighter for hover state */
+    color: #B28A30; /* A slightly darker shade for hover state */
   }
 `
 
 function App() {
   const contractAddress = "0xD4d26c5e437173796B3ff41Fc5a75Ab96eB604eA"; // Define your contract address here
-  const etherscanLink = `https://etherscan.io/address/${contractAddress}`;
+  const etherscanLink = `https://testnet-explorer.etherlink.com/token/${contractAddress}`;
 
   const [tokenDetails, setTokenDetails] = useState(null);
   const [contract, setContract] = useState(null);
