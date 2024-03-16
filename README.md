@@ -24,26 +24,26 @@ To get started with the BoopsTokenFrontend, follow these steps:
 
 1. **Clone the repository**
 
-   ```
-   git clone https://github.com/michaelkernaghan/BoopsTokenFrontend.git
-   ```
+```bash
+git clone https://github.com/michaelkernaghan/BoopsTokenFrontend.git
+```
 
 2. **Install dependencies**
 
-   Navigate to the project directory and install the necessary dependencies:
+Navigate to the project directory and install the necessary dependencies:
 
-   ```
-   cd BoopsTokenFrontend
-   npm install
-   ```
+```bash
+cd BoopsTokenFrontend
+npm install
+```
 
 3. **Start the development server**
 
-   ```
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
-   This command will start the Vite development server. Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
+This command will start the Vite development server. Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
 
 ## Contributing
 
@@ -62,7 +62,3 @@ For more information and updates, please visit our [official website](https://bo
 ```
 
 Ensure to replace any placeholder links and paths (`CONTRIBUTING.md`, `LICENSE`) with actual files if they exist in your repository. Adjust any project-specific details according to your actual project setup and requirements.
-
-🔄 A: Alt  
-💬 S: Explain  
-🛠 D: Iterate, Improve, Evolve
