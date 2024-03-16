@@ -25,7 +25,17 @@ const TokenDetailsList = styled.ul`
   text-align: left;
 `
 
+const ContractAddressLink = styled.a`
+  color: #FFD580; /* Use your theme's color */
+  &:hover {
+    color: #FFC300; /* Slightly brighter for hover state */
+  }
+`
+
 function App() {
+  const contractAddress = "0xD4d26c5e437173796B3ff41Fc5a75Ab96eB604eA"; // Define your contract address here
+  const etherscanLink = `https://etherscan.io/address/${contractAddress}`;
+
   const [tokenDetails, setTokenDetails] = useState(null);
   const [contract, setContract] = useState(null);
   const [wallet, setWallet] = useState({ accounts: [] });
@@ -35,7 +45,7 @@ function App() {
     if (typeof window.ethereum !== 'undefined') {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
-      const contract = new ethers.Contract("0xCB2aB1E44daDC889a91184527beC6820Bc2BF210", BOOPSToken.abi, signer);
+      const contract = new ethers.Contract(contractAddress, BOOPSToken.abi, signer);
       setContract(contract);
 
       const symbol = await contract.symbol();
@@ -112,6 +122,7 @@ function App() {
               <li>Total Supply: {tokenDetails && tokenDetails.totalSupply}</li>
               <li>Your BOOPS Balance: {boopsBalance}</li>
             </TokenDetailsList>
+            <p>Contract Address: <ContractAddressLink href={etherscanLink} target="_blank" rel="noopener noreferrer">{contractAddress}</ContractAddressLink></p>
             To disconnect, stop the Active Connection in Metamask
           </div>
         )}
@@ -126,6 +137,4 @@ function App() {
 };
 
 export default App;
-
-
 
